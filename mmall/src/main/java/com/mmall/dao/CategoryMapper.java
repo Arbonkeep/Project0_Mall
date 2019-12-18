@@ -1,6 +1,6 @@
-package com.arbonkeep.dao;
+package com.mmall.dao;
 
-import com.arbonkeep.pojo.Category;
+import com.mmall.pojo.Category;
 
 public interface CategoryMapper {
     int deleteByPrimaryKey(Integer id);

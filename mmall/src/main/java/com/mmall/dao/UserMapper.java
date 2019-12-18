@@ -1,6 +1,6 @@
-package com.arbonkeep.dao;
+package com.mmall.dao;
 
-import com.arbonkeep.pojo.User;
+import com.mmall.pojo.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);

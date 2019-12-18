@@ -1,4 +1,4 @@
-package com.arbonkeep.pojo;
+package com.mmall.pojo;
 
 import java.math.BigDecimal;
 import java.util.Date;

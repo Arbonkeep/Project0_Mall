@@ -1,6 +1,6 @@
-package com.arbonkeep.dao;
+package com.mmall.dao;
 
-import com.arbonkeep.pojo.Shipping;
+import com.mmall.pojo.Shipping;
 
 public interface ShippingMapper {
     int deleteByPrimaryKey(Integer id);

@@ -1,6 +1,6 @@
-package com.arbonkeep.dao;
+package com.mmall.dao;
 
-import com.arbonkeep.pojo.OrderItem;
+import com.mmall.pojo.OrderItem;
 
 public interface OrderItemMapper {
     int deleteByPrimaryKey(Integer id);

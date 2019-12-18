@@ -1,6 +1,6 @@
-package com.arbonkeep.dao;
+package com.mmall.dao;
 
-import com.arbonkeep.pojo.PayInfo;
+import com.mmall.pojo.PayInfo;
 
 public interface PayInfoMapper {
     int deleteByPrimaryKey(Integer id);

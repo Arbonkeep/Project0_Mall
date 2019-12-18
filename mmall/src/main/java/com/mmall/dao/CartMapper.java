@@ -1,6 +1,6 @@
-package com.arbonkeep.dao;
+package com.mmall.dao;
 
-import com.arbonkeep.pojo.Cart;
+import com.mmall.pojo.Cart;
 
 public interface CartMapper {
     int deleteByPrimaryKey(Integer id);

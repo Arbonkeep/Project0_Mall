@@ -1,4 +1,4 @@
-package com.arbonkeep.pojo;
+package com.mmall.pojo;
 
 import java.util.Date;
 
