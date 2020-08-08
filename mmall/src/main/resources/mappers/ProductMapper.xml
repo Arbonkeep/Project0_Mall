@@ -161,6 +161,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
+
   <update id="updateByPrimaryKey" parameterType="com.mmall.pojo.Product">
     update mmall_product
     set category_id = #{categoryId,jdbcType=INTEGER},
@@ -176,4 +177,46 @@
       update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectList" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM mmall_product
+    ORDER BY id ASC
+    <!--注意：在我们使用pageHelper插件时，不需要在sql语句结尾加上分号结束   -->
+
+  </select>
+
+  <select id="selectByNameAndProductId" resultMap="BaseResultMap" parameterType="map">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM mmall_product
+    <where>
+      <if test="productName != null">
+        and name LIKE #{productName}
+      </if>
+      <if test="productId != null">
+        and id =#{productId}
+      </if>
+    </where>
+    <!--
+      注意：在where标签中，如果if标签不满足，会自动将后面连接的and关键字去除，用where替代    -->
+
+  </select>
+  
+  <select id="selectByNameAndProductIds" resultMap="BaseResultMap" parameterType="map">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM mmall_product
+    WHERE status = 1
+    <if test="productName != null">
+      AND category_id IN
+      <foreach collection="categoryIdList" item="item" index="index" open="(" separator="," close=")">
+        #{item}
+      </foreach>
+    </if>
+  </select>
+
+
+
 </mapper>
