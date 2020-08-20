@@ -158,9 +158,17 @@
 
   </update>
   
-  <select id="selectCartProductCount" parameterType="in " resultType="int">
+  <select id="selectCartProductCount" parameterType="int" resultType="int">
     SELECT IFNULL(sum(quantity), 0)  as count from mmall_cart where user_id = #{userId}
 --     使用ifnull函数处理查询结果为null时赋值为0
+  </select>
+  
+  <select id="selectCheckedCartByUserId" resultMap="BaseResultMap" parameterType="int">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM  mmall_cart
+    WHERE user_id = #{userId}
+    and checked = 1
   </select>
 
 </mapper>
